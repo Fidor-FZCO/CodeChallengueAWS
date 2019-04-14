@@ -7,7 +7,7 @@
     Apache (run wordpress frontend)
     MySQL (run wordpress database)
 
-3 - Use cloudformation to create record in Route53 (A record) and make sure the wordpress site is available on internet.
+3 - Use Cloudformation to create record in Route53 (A record) and make sure the wordpress site is available on internet.
 
 Provide the all code templates once tasks are completed.
     
