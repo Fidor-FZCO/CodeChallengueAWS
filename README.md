@@ -1,8 +1,10 @@
 # Code Challenge
 
-1 - Use Cloudformation or Terraform to create single instance in AWS and make that instance Docker Swarm node.
+1 - Use Cloudformation or Terraform to create single instance in AWS.
 
-2 - Create docker-compose file (v3) which will run below applications as docker containers
+2 - Use ansible to create above node as Docker Swarm node.
+
+2 - Create docker-compose file (v3) which will run below applications as docker containers.
 
     Apache (run wordpress frontend)
     MySQL (run wordpress database)
