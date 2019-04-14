@@ -2,7 +2,7 @@
 
 1 - Use Cloudformation or Terraform to create single instance in AWS.
 
-2 - Use ansible to create above node as Docker Swarm node.
+2 - Use Ansible to create above node as Docker Swarm node.
 
 2 - Create docker-compose file (v3) which will run below applications as docker containers.
 
