@@ -1,0 +1,39 @@
+-
+ name: Download and install Docker
+ hosts: all
+ become: true
+ tasks:
+  - name: Download Docker script
+    command: curl -fsSL https://get.docker.com -o get-docker.sh
+    args:
+      warn: false
+
+  - name: execute the script
+    shell: sh get-docker.sh
+
+  - name: start docker
+    service: 
+      name: docker
+      state: started
+
+  - name: download and install docker-compose
+    shell: curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    args:
+      warn: false
+
+  - name: make the file executable
+    command: chmod +x /usr/local/bin/docker-compose
+    args:
+      warn: false
+
+  - name: make the node a docker-swarm master node
+    command: docker swarm init
+
+  - name: copy docker-compose file
+    copy:
+      src: docker-compose.yml
+      dest: /home/ubuntu/
+
+  - name: run docker-compose
+    shell: docker-compose up -d
+
